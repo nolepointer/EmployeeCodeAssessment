@@ -37,13 +37,14 @@ public class DummyApiService implements EmployeeApiService {
                 .block();
 
         checkApiResponseStatus(wrapper);
+
         return Arrays.stream(wrapper.getData())
                 .map(EmployeeTransformer::transform)
                 .collect(Collectors.toList());
     }
 
     @Override
-    public Employee getEmployeeById(String id) {
+    public Employee getEmployeeById(@NonNull String id) {
         logger.info("Fetching employee with ID: {}", id);
 
         DummyApiWrapperDto<DummyEmployeeDto> wrapper = webClient.get()
@@ -70,7 +71,7 @@ public class DummyApiService implements EmployeeApiService {
                 .block();
 
         checkApiResponseStatus(wrapper);
-        return EmployeeTransformer.transform(wrapper.getData());
+        return getEmployeeById(wrapper.getData().getId());
     }
 
     @Override
@@ -89,6 +90,7 @@ public class DummyApiService implements EmployeeApiService {
     }
 
     private void checkApiResponseStatus(DummyApiWrapperDto wrapper) {
+        
         if (wrapper == null || !"success".equals(wrapper.getStatus())) {
             logger.error("External API returned an error with message: ", wrapper.getMessage());
             throw new ExternalApiException("External API returned an error");

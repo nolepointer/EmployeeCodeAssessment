@@ -11,9 +11,6 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-/**
- * Service class for managing employees.
- */
 @Service
 public class EmployeeService {
 
@@ -70,12 +67,7 @@ public class EmployeeService {
         return Optional.ofNullable(employeeApiService.deleteEmployee(id));
     }
 
-    /**
-     * Validates the employee input data.
-     * 
-     * @param employeeInput a map containing employee data
-     */
-    private void validateEmployeeInput(Map<String, Object> employeeInput) {
+    private void validateEmployeeInput(@NonNull Map<String, Object> employeeInput) {
         // Validate required fields
         if (!employeeInput.containsKey("name") ||
                 !employeeInput.containsKey("salary") ||

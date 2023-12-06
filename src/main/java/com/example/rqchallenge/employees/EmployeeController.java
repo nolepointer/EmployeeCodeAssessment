@@ -52,12 +52,12 @@ public class EmployeeController {
     }
 
     @PostMapping()
-    public ResponseEntity<?> createEmployee(@RequestBody Map<String, Object> employeeInput) {
+    public ResponseEntity<Employee> createEmployee(@RequestBody Map<String, Object> employeeInput) {
         try {
             Employee employee = employeeService.createEmployee(employeeInput);
             return ResponseEntity.ok(employee);
         } catch (IllegalArgumentException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
+            return ResponseEntity.badRequest().build();
         }
     }
 
