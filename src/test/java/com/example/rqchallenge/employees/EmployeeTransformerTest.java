@@ -1,7 +1,9 @@
 package com.example.rqchallenge.employees;
 
-import exceptions.ExternalApiException;
 import org.junit.jupiter.api.Test;
+
+import com.exceptions.ExternalApiException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class EmployeeTransformerTest {

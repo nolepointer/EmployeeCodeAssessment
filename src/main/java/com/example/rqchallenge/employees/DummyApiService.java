@@ -6,7 +6,8 @@ import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.lang.NonNull;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import exceptions.ExternalApiException;
+import com.exceptions.ExternalApiException;
+
 import reactor.core.publisher.Mono;
 
 import java.util.Arrays;
