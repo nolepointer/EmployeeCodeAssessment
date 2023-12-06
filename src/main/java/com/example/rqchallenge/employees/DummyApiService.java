@@ -6,7 +6,7 @@ import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.lang.NonNull;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import com.exceptions.ExternalApiException;
+import com.example.rqchallenge.exceptions.ExternalApiException;
 
 import reactor.core.publisher.Mono;
 

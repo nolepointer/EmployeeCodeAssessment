@@ -1,6 +1,6 @@
 package com.example.rqchallenge.employees;
 
-import com.exceptions.ExternalApiException;
+import com.example.rqchallenge.exceptions.ExternalApiException;
 
 public class EmployeeTransformer {
 

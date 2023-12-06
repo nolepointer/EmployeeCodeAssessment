@@ -2,7 +2,7 @@ package com.example.rqchallenge.employees;
 
 import org.junit.jupiter.api.Test;
 
-import com.exceptions.ExternalApiException;
+import com.example.rqchallenge.exceptions.ExternalApiException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
